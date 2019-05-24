@@ -2,6 +2,7 @@ package com.application.dev.david.marvelsuperherosapp.data;
 
 import com.application.dev.david.marvelsuperherosapp.data.local.Local;
 import com.application.dev.david.marvelsuperherosapp.data.remote.Remote;
+import com.application.dev.david.marvelsuperherosapp.models.SuperHero;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public class SuperHeroesRepository {
         this.remoteDataSource = remoteDataSource;
     }
 
-    public Observable<List<String>> getColors(int position) {
+    public Observable<List<SuperHero>> getColors(int position) {
         if (localDataSource.hasSuperHeroes(position)) {
             return localDataSource.getSuperHeroes(position);
         }

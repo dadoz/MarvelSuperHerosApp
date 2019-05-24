@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
-import com.application.dev.david.marvelsuperherosapp.modules.superherosCards.SuperHeroesCardsFragment;
+import com.application.dev.david.marvelsuperherosapp.modules.superherosCards.ui.SuperHeroesCardsFragment;
 import com.application.dev.david.marvelsuperherosapp.modules.superherosLike.SuperHeroesLikeListFragment;
 
 import butterknife.ButterKnife;
@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.navigation_dashboard:
                         loadFragment(new SuperHeroesLikeListFragment());
                         return true;
-                    case R.id.navigation_notifications:
                     default:
                         return true;
                 }

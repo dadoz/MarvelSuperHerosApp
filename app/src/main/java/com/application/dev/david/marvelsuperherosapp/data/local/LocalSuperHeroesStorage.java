@@ -1,6 +1,7 @@
 package com.application.dev.david.marvelsuperherosapp.data.local;
 
 import com.application.dev.david.marvelsuperherosapp.data.SuperHeroesDataSource;
+import com.application.dev.david.marvelsuperherosapp.models.SuperHero;
 
 import java.util.List;
 import io.reactivex.Observable;
@@ -13,7 +14,7 @@ public class LocalSuperHeroesStorage implements SuperHeroesDataSource {
     }
 
     @Override
-    public Observable<List<String>> getSuperHeroes(int position) {
+    public Observable<List<SuperHero>> getSuperHeroes(int position) {
         return null;
     }
 
@@ -23,7 +24,7 @@ public class LocalSuperHeroesStorage implements SuperHeroesDataSource {
     }
 
     @Override
-    public void addSuperHeroes(List<String> list) {
+    public void addSuperHeroes(List<SuperHero> list) {
 
     }
 }
