@@ -25,7 +25,7 @@ public class ColorGridPresenter {
 
     public void retrieveData() {
         Disposable disposable =
-                respository.getColors(0)
+                respository.getSuperHeroes()
                                 .subscribeOn(Schedulers.newThread())
                                 .observeOn(AndroidSchedulers.mainThread())
                                 .doOnError(Throwable::printStackTrace)

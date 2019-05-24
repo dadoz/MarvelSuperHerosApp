@@ -3,4 +3,9 @@
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
+    <string name="error_network_no_network">No network exception</string>
+    <string name="server_error">Server error</string>
+
+    <string name="API_TOKEN">c26162579e9b63960d08049628e3e8b8</string>
+
 </resources>

@@ -14,12 +14,12 @@ public class LocalSuperHeroesStorage implements SuperHeroesDataSource {
     }
 
     @Override
-    public Observable<List<SuperHero>> getSuperHeroes(int position) {
+    public Observable<List<SuperHero>> getSuperHeroes() {
         return null;
     }
 
     @Override
-    public boolean hasSuperHeroes(int position) {
+    public boolean hasSuperHeroes() {
         return false;
     }
 

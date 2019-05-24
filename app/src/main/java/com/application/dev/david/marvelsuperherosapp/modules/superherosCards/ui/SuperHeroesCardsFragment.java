@@ -3,7 +3,9 @@ package com.application.dev.david.marvelsuperherosapp.modules.superherosCards.ui
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +17,17 @@ import com.application.dev.david.marvelsuperherosapp.data.remote.RemoteSuperHero
 import com.application.dev.david.marvelsuperherosapp.models.SuperHero;
 import com.application.dev.david.marvelsuperherosapp.modules.superherosCards.ColorGridPresenter;
 import com.application.dev.david.marvelsuperherosapp.modules.superherosCards.SuperHeroesView;
+import com.application.dev.david.marvelsuperherosapp.modules.superherosCards.adapter.SuperHeroesViewPagerAdapter;
 
 import java.util.List;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class SuperHeroesCardsFragment extends Fragment implements SuperHeroesView {
     private ColorGridPresenter presenter;
+    @BindView(R.id.sHeroesViewPagerId)
+    ViewPager sHeroesViewPager;
 
     @Nullable
     @Override
@@ -49,9 +55,11 @@ public class SuperHeroesCardsFragment extends Fragment implements SuperHeroesVie
 
     @Override
     public void onSuperHeroesRetrieved(List<SuperHero> list) {
+        sHeroesViewPager.setAdapter(new SuperHeroesViewPagerAdapter(list));
     }
 
     @Override
     public void onSuperHeroesError(String error) {
+        Snackbar.make(getActivity().getWindow().getDecorView(), error, Snackbar.LENGTH_SHORT).show();
     }
 }

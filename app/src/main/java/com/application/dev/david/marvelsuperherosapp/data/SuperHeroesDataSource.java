@@ -9,9 +9,9 @@ import java.util.List;
 import io.reactivex.Observable;
 
 public interface SuperHeroesDataSource {
-    Observable<List<SuperHero>> getSuperHeroes(int position);
+    Observable<List<SuperHero>> getSuperHeroes();
 
-    boolean hasSuperHeroes(int position);
+    boolean hasSuperHeroes();
 
     void addSuperHeroes(List<SuperHero> list);
 

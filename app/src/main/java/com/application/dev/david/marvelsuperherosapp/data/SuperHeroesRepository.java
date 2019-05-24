@@ -20,14 +20,14 @@ public class SuperHeroesRepository {
         this.remoteDataSource = remoteDataSource;
     }
 
-    public Observable<List<SuperHero>> getColors(int position) {
-        if (localDataSource.hasSuperHeroes(position)) {
-            return localDataSource.getSuperHeroes(position);
+    public Observable<List<SuperHero>> getSuperHeroes() {
+        if (localDataSource.hasSuperHeroes()) {
+            return localDataSource.getSuperHeroes();
         }
 
-        return Observable.just(position)
+        return Observable.just("")
                 .subscribeOn(Schedulers.newThread())
-                .flatMap(index -> remoteDataSource.getSuperHeroes(position)
+                .flatMap(index -> remoteDataSource.getSuperHeroes()
                         .observeOn(AndroidSchedulers.mainThread())
                         .doOnNext(localDataSource::addSuperHeroes))
                 .subscribeOn(Schedulers.newThread());
